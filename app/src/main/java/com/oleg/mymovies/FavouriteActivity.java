@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.oleg.mymovies.adapters.MovieAdapter;
 import com.oleg.mymovies.data.FavoriteMovie;
 import com.oleg.mymovies.data.MainViewModel;
 import com.oleg.mymovies.data.Movie;

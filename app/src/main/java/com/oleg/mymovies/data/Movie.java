@@ -1,23 +1,18 @@
 package com.oleg.mymovies.data;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
-
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import com.oleg.mymovies.utils.JSONUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
+
 @Entity(tableName = "movies")
 public class  Movie {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    private int myDbId;
     private int id;
     private int voteCount;
     private String title;
@@ -29,6 +24,20 @@ public class  Movie {
     private String releaseDate;
 
 
+    public Movie(int myDbId, int id, int voteCount, String title, String originalTitle, String overview, String posterPath, String backdropPath, double voteAverage, String releaseDate) {
+        this.myDbId = myDbId;
+        this.id = id;
+        this.voteCount = voteCount;
+        this.title = title;
+        this.originalTitle = originalTitle;
+        this.overview = overview;
+        this.posterPath = posterPath;
+        this.backdropPath = backdropPath;
+        this.voteAverage = voteAverage;
+        this.releaseDate = releaseDate;
+    }
+
+    @Ignore
     public Movie(int id, int voteCount, String title, String originalTitle, String overview, String posterPath, String backdropPath, double voteAverage, String releaseDate) {
         this.id = id;
         this.voteCount = voteCount;
@@ -39,6 +48,14 @@ public class  Movie {
         this.backdropPath = backdropPath;
         this.voteAverage = voteAverage;
         this.releaseDate = releaseDate;
+    }
+
+    public void setMyDbId(int myDbId) {
+        this.myDbId = myDbId;
+    }
+
+    public int getMyDbId() {
+        return myDbId;
     }
 
     public int getId() {

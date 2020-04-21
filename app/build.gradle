@@ -20,6 +20,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    
+
+    /*lintOptions{
+        checkReleaseBuilds false
+        aboutOnError false
+    }*/
 
 }
 
@@ -81,5 +87,6 @@ dependencies {
     // Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
 }

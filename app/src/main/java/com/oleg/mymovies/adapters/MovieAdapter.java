@@ -1,4 +1,4 @@
-package com.oleg.mymovies;
+package com.oleg.mymovies.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,22 +8,26 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.oleg.mymovies.R;
 import com.oleg.mymovies.data.Movie;
-import com.oleg.mymovies.utils.NetworkUtils;
 import com.squareup.picasso.Picasso;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
     private List<Movie> movieList;
-    interface OnMoviePosterClickListener {
+
+    public void clearAdapter(){
+        this.movieList.clear();
+        notifyDataSetChanged();
+    }
+
+    public interface OnMoviePosterClickListener {
         void onShotClick(int pisition);
 
     }
-    interface OnReachEndListener{
+    public interface OnReachEndListener{
         void onRechEnd();
     }
 
@@ -68,10 +72,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
-        if(position>movieList.size()-5 && onReachEndListener!=null){
+
+        Picasso.get().load(movieList.get(position).getSmallPosterPath()).into(holder.imageViewSmallPoster);
+        if(movieList.size()>=20 && position>movieList.size()-5 && onReachEndListener!=null){
             onReachEndListener.onRechEnd();
         }
-        Picasso.get().load(movieList.get(position).getSmallPosterPath()).into(holder.imageViewSmallPoster);
 
        /*NetworkUtils.DowenloadSmallPosterURLTask dowenloadSmallPosterTask;
 

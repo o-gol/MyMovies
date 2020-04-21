@@ -25,7 +25,7 @@ public interface MovieDao {
     @Query("DELETE FROM movies")
     void deleteAllMovies();
     @Insert
-    void insertMovies(Movie movie);
+    void insertMovies(List<Movie> movie);
     @Delete
     void deleteMovie(Movie movie);
 

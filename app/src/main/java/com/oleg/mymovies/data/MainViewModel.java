@@ -71,7 +71,7 @@ public class MainViewModel extends AndroidViewModel {
 
     }
 
-    public void insertMovies(Movie movie) {
+    public void insertMovies(List<Movie> movie) {
 
             new InsertTask().execute(movie);
     }
@@ -84,9 +84,9 @@ public class MainViewModel extends AndroidViewModel {
 
 
 
-    private class InsertTask extends AsyncTask<Movie,Void,Void> {
+    private class InsertTask extends AsyncTask<List<Movie>,Void,Void> {
         @Override
-        protected Void doInBackground(Movie... movies) {
+        protected Void doInBackground(List<Movie>... movies) {
             if (movies != null && movies.length > 0) {
 
                 database.movieDao().insertMovies(movies[0]);

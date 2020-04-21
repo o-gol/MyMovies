@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".DetailActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:text="Название"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+        <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.5"
+                android:id="@+id/guideline"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewTitle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"/>
+        <TextView
+                android:text="Оригинальное название"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTitle" app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewOriginalTitle"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+                app:layout_constraintStart_toStartOf="@+id/guideline" app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+                android:text="Рейтинг"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textViewOriginalTitle"
+                app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewRating"
+                app:layout_constraintTop_toBottomOf="@+id/textViewOriginalTitle"
+                app:layout_constraintStart_toStartOf="@+id/guideline"/>
+        <TextView
+                android:text="Дата выхода"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewTitleDate"
+                app:layout_constraintTop_toBottomOf="@+id/textViewRating" app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDate"
+                app:layout_constraintTop_toBottomOf="@+id/textViewRating"
+                app:layout_constraintStart_toStartOf="@+id/guideline"/>
+        <TextView
+                android:text="Описание"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewLableDescription"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDate" app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewOverview"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDate"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTralers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewOverview"
+
+        />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewReviwe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewTralers"
+
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
